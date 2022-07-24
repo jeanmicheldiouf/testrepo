@@ -1,0 +1,178 @@
+\documentclass[a4paper,12pt]{book}
+\onecolumn
+\usepackage{amssymb,amsmath,amsfonts}
+\usepackage[french]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{kpfonts}
+\usepackage{anttor}
+\usepackage{calligra}
+%\usepackage{mathaccents}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+%\usepackage[easylists]
+\usepackage{color}
+\usepackage{layout}
+\usepackage{graphicx}
+\usepackage{floatflt}
+\usepackage{tablists}
+%\documentclass[14.5pt,a4paper]{book}%definie les caractéristique etla classe du document
+\usepackage[utf8]{inputenc}%pour inserrer les caractèes francophone
+%\usepackage[french]{babel}% les accent et d'autr caractères
+%\usepackage[T1]{fontenc} %pour les fonts ou police
+\usepackage{parallel}
+\usepackage{cwpuzzle}%pour les mots croisés
+%\usepackage{amsmath}%formules et symbole maths
+%\usepackage[]{graphicx} % pour inclure des graphiquue dans les docs
+\usepackage{color}%colorer les encadrer
+\usepackage{bclogo}%pour inséré un logo dans une boite
+\usepackage{xkeyval}
+\usepackage{watermark}%pour mettre en filigrane
+\usepackage{xcolor}%pour avoir les differentes couleur 
+\usepackage{caption}%pour placer une image dans la marge d'un texte
+%\usepackage[pdftex]{graphics}
+%\usepackage{N.D.T}
+%\usepackage[colorgrid]{eso-pic}%permet d'obtenir du papier carrereler
+%\usepackage{lmodern}%latin moderne pour des caractères latine
+\usepackage{wrapfig}%inséré une image dans un texte
+\usepackage{photo}%inséré des des photos
+\usepackage{afterpage}%permet de stoker les commandes qui seront utiliser sur la page suivante
+\usepackage{framed}%pour la personnalisation des boites et encadrer des textes
+\usepackage{fancybox}%pour crée des boites
+\usepackage{ulem}%pour souligner les partie du texte
+\usepackage{multicol}% pour separer une feuille en plusieurs colonnes
+\usepackage{fancyhdr}%pour inserer les entêtes et les pieds de pages
+\pagestyle{fancy}%pour choisir un style de page personaliser
+\linespread{1.6}%permet d'espacer les lignes des différents paragraphe
+%\voffset = 0
+%\hoffset = 0
+\fancyhead{} % vide l’en-tête
+%\fancyhead[RO,LE]{\bfseries Ann\'{e}e Scolaire 2014-2015}%ecrit se trouvant sur l'entête
+\fancyfoot{} % vide le pied~de~page
+%\fancyfoot[LE,RO]{\thepage}
+%\fancyfoot[LO,CE]{Prof :Armand Ndinga }
+%\fancyfoot[CO,RE]{Et : Brice Manga}
+%\renewcommand{\headrulewidth}{0.4pt}%épaisseur de la ligne qui sépare l'entête du corps du doc
+%\renewcommand{\footrulewidth}{0.4pt}%épaisseur de la ligne qui sépare le pied du corps du doc
+\begin{document}
+	\newcommand{\R}{\mathbb{R}}
+	\newcommand{\F}{\mathcal{F}}
+	\newcommand{\PO}{\mathbb{P}}
+	\newcommand{\E}{\mathbb{E}}
+	\newcommand{\SQ}{\mathcal{S}}
+	\newcommand{\N}{\mathcal{N}}
+	\newcommand{\dia}{\diamondsuit}
+	\newcommand{\B}{\mathcal{B}}
+	\newcommand{\M}{\mathcal{M}}
+	\newcommand{\G}{\mathcal{G}}
+	\newcommand{\LK}{\mathcal{L}}
+	\newcommand{\C}{\mathcal{C}}
+	%\newcommand{\i}{\mathrm{i}}
+	%\newcommand{\e}{\mathrm{e}}
+	\newtheorem{theo}{Th\'{e}or\`{e}me}[chapter]
+	\newtheorem{lem}{Lemme}[chapter]
+	\newtheorem{coro}{Corollaire}[chapter]
+	\newtheorem{propo}{Proposition}[chapter]
+	\newtheorem{defi}{D\'{e}finition}[chapter]
+	\newtheorem{rem}{Remarque}[chapter]
+	\newtheorem{exa}{Exemple}[chapter]
+	\newtheorem{proof}{Preuve}[chapter]
+	\newtheorem{exo}{Exercice}[chapter]
+	%\tableofcontents
+	%\title{Sur le Langrangien de TONELLI}
+	%\author{Abdoulaye SARR}
+	%\maketitle
+	%\chapter{calcul dans }
+	%\begin{flushleft}
+	%Cours ANNE MARIE JAVOUHEY\\
+	%Second Cycle
+	%\end{flushleft}
+	%\pagebreak
+	%\thispagestyle{plain}
+	%\fancypagestyle{plain}
+	%\pagenumbering{Alph}
+	\pagestyle{fancy}
+	\lhead{\bfseries  École Catholique\\
+		Saint Pierre\\}
+	\chead{\bfseries Céllule de \\ Mathématiques\\ $1^{\text{ère}}$ $S_1$}
+	\rhead{\bfseries Ann\'{e}e Scolaire \\ 2017-2018\\  }
+	\lfoot{ }
+	\cfoot{}
+	\rfoot{\thepage}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\footrulewidth}{0.5pt}
+	\vspace*{0.5cm}
+	\begin{minipage}{2cm}
+		\includegraphics[scale=0.2]{LOGO.png} 
+	\end{minipage}
+	\begin{minipage}{13cm}
+		\begin{center}
+			\textbf{COMPOSITION DU SECOND SEMESTRE DE MATHÉMATIQUES}\\
+			\textbf{Durée : 4 heures}	
+		\end{center}
+	\end{minipage}
+	
+\textbf{\underline{Exercice 1:} 5 points}\\
+Soit $a \in \mathbb{R}\setminus \{0;1 \}$, on considère les suites $(U_n)$ et $(V_n)$ définies par:
+$\begin{cases}
+U_0=0 \textbf{;} U_1=1 \\
+U_{n+1}=(1-a)U_n + aU_{n-1}	
+\end{cases}$\\
+et $V_n=U_{n+1}-U_n$.
+\begin{enumerate}
+	\item Calculer  $U_2$, $U_3$ et $U_4$ en fonction de a.
+	\item Calculer en fonction de a les quatre premiers termes de $(V_n)$.
+	\item
+	\begin{enumerate}
+		\item Démontrer que $(V_n )$ est une suite géométrique de raison $q=-a$.
+		\item Exprimer $V_n$ en fonction n.
+		\item Déterminer les valeurs de a pour lesquelles $(V_n)$ est une suite convergente.
+		\item Étudier suivant les valeurs de a le sens de variation de la suite $(V_n)$.
+	\end{enumerate}
+	\item On pose $a=-\displaystyle{\frac{1}{2}}$.
+	\begin{enumerate}
+		\item Calculer $S_n=V_0+V_1+...+V_{n-1}$ en fonction de n.
+		\item Exprimer $U_n$ en fonction de $S_n$.\\
+		Calculer $\displaystyle{\lim_{n \to + \infty}U_n}$.
+	\end{enumerate}
+\end{enumerate}
+
+\textbf{\underline{EXERCICE 2 :} 5 points }\\
+On considère un triangle ABC direct. On appelle I, J et K les milieux respectifs [BC], [CA] et [AB]. Soit N l'image de C par la rotation de centre J et d'angle $\displaystyle{\frac{\pi}{2}}$ et P l'image de A par la rotation de centre K et d'angle $\displaystyle{\frac{\pi}{2}}$.
+\begin{enumerate}
+	\item Montrer que KP = IJ .\textbf{ (0.75 pt)}
+	\item On appelle r la rotation qui transforme K en J et P en I . Quelle est une mesure de l’angle de cette rotation ?\textbf{ (0.75 pt)}
+	\item Démontrer que les triangles IJN et IKP sont isométriques. En déduire l’image de I par r et que le triangle PIN est isocèle et rectangle en I .\textbf{( 1.5 pt)}
+	\item On appelle $r_1$ la rotation de centre N et d’angle $\displaystyle{\frac{\pi}{2}}$ 	et $r_2$ la rotation de centre P et d’angle $\displaystyle{\frac{\pi}{2}}$.\\
+	Déterminer l'image de B par $r_1\circ r_2$.\textbf{(1 pt)} \\
+	Donner la nature et les éléments caractéristiques de la transformation  $r_1\circ r_2$.\textbf{(1 pt)}
+\end{enumerate}
+\textbf{\underline{PROBLÈME} 10 points}\\
+Le plan est muni d'un  repère orthonormé $(O,\overrightarrow{i},\overrightarrow{j})$. Soit f la fonction définie sur par $\displaystyle{f(x)=\frac{3x^2+ax+b}{x^2+1}}$.
+\begin{enumerate}
+	\item Déterminer les réels a et b pour que la courbe représentative de la fonction f soit tangente à la droite $(D):4x+3$ au point $I(0;3)$.
+	\item Dans la suite on suppose $a=4$ et $b=3$.
+	\begin{enumerate}
+		\item Déterminer les réels $\alpha$ et $\beta$ tels que : $\displaystyle{f(x)=\alpha+\frac{\beta x}{x^2+1}}$.
+		\item Calculer les limites en $-\infty$ et en $+\infty$ de f. Interpréter graphiquement ces résultats.
+	\end{enumerate}
+	\item Dresser le tableau de variation de f.
+	\item 
+	\begin{enumerate}
+		\item Montrer que le point $I(0,3)$ est un centre de symétrie de la courbe de f.
+		\item Étudier la position relative de $\mathcal{C}_f$ par rapport à la droite (D).
+	\end{enumerate}
+	\item Construire $\mathcal{C}_f$.
+	\item Soit g la fonction définie sur $\mathbb{R}$ par :
+	$\begin{cases}
+	g(x)=f(x) \text{ si } x<0 \\
+	g(x)=3 +\sqrt{x^2+x} \text{ si } x\geq 0	 
+	\end{cases}$
+	\begin{enumerate}
+		\item Montrer que g est continue en 0.
+		\item Étudier la dérivabilité de g en 0. Interpréter graphiquement ce résultat.
+		\item Montrer  que $\mathcal{C}_g$ admet une asymptote oblique en $+\infty$. Préciser son équation.	
+	\end{enumerate}
+	\item Dresser le tableau de variation de g.
+	\item  Tracer la courbe $\mathcal{C}_g$ dans le repère précédent.
+\end{enumerate}
+\end{document}
